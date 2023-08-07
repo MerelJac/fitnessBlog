@@ -1,0 +1,30 @@
+{
+  "name": "fitnessblog",
+  "version": "1.0.0",
+  "description": "Blog allowing users to create posts and view posts of others.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MerelJac/fitnessBlog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MerelJac/fitnessBlog/issues"
+  },
+  "homepage": "https://github.com/MerelJac/fitnessBlog#readme",
+  "dependencies": {
+    "connect-session-sequelize": "^7.1.7",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-handlebars": "^7.1.1",
+    "express-session": "^1.17.3",
+    "mysql2": "^3.6.0",
+    "sequelize": "^6.32.1"
+  }
+}
