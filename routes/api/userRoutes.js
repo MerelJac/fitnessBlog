@@ -20,9 +20,14 @@ router.get('/:id', async (req, res) => {
 // create new user -- not yet working
 router.post('/', async (req, res) => {
   console.log(req.body)
-  const newUser = await User.create(req.body)
+  const newUser = await User.create({
+    first_name: req.body.first_name,
+    last_name: req.body.last_name,
+    email: req.body.email,
+    password: req.body.password
+  })
   console.log('Created new user');
-  res.json('user created', newUser)
+  res.status(200).json('user created', newUser)
   res.status(400).json(error)
 });
 

@@ -18,8 +18,6 @@ app.get('/', (req, res) => {
     res.render('all')
 })
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true}))
 
 app.use(session({
     secret: 'secret secret',
@@ -30,6 +28,8 @@ app.use(session({
 
 }));
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true}))
 // should be set up after session 
 app.use(routes);
 
