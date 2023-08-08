@@ -19,9 +19,11 @@ app.use(express.urlencoded({ extended: true}))
 app.use(session({
     secret: 'secret secret',
     cookie: { maxAge: 30000},
+    resave: true,
     // otherwise will create new session upon every server launch
     saveUninitialized: false
-}))
+
+}));
 
 // should be set up after session 
 app.use(routes);
