@@ -10,10 +10,14 @@ const app = express();
 const PORT = process.env.PORT || 3002;
 
 // handlebars middleware 
-// app.engine('handlebars', hbs.engine);
-// app.use('view engine', 'handlebars')
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars')
 
-app.use(express.static('public'));
+// app.use(express.static('public'));
+app.get('/', (req, res) => {
+    res.render('all')
+})
+
 app.use(express.urlencoded({ extended: true}))
 
 app.use(session({
