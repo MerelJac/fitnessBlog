@@ -15,6 +15,23 @@ router.get('/:id', async (req, res) => {
   res.json(singleComments)
 })
 
+// get comments from users -- successful
+router.get('/user/:id', async (req, res) => {
+    const commentsFromUser = await Comments.findAll({
+        where: { user_id: req.params.id }
+    })
+    console.log('Found user`s comments');
+    res.json(commentsFromUser)
+  })
+
+// get comments from post
+router.get('/blogPost/:id', async (req, res) => {
+    const commentsFromPost = await Comments.findAll({
+        where: { post_id: req.params.id }
+    })
+    console.log('Found all comments for single post');
+    res.json(commentsFromPost)
+  })
 // // create new post -- not yet working
 // router.post('/', async (req, res) => {
 //   console.log(req.body)
