@@ -29,9 +29,6 @@ User.init({
         // min length is 8
         type: DataTypes.STRING,
         allowNull: false,
-        validate: {
-            len: [8]
-        }
     }
 }, {
     sequelize,

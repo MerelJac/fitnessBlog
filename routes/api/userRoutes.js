@@ -19,7 +19,7 @@ router.get('/:id', async (req, res) => {
 
 // create new user -- not yet working
 router.post('/', async (req, res) => {
-  await console.log(req.body)
+  console.log(req.body)
   const newUser = await User.create(req.body)
   console.log('Created new user');
   res.json('user created', newUser)
@@ -38,7 +38,7 @@ router.delete('/:id', async (req, res) => {
 })
 
 
-// update User email
+// update User info
 router.put('/:id', async (req, res) => {
   await User.update({
     email: req.body.email,
@@ -48,25 +48,11 @@ router.put('/:id', async (req, res) => {
       id: req.params.id
     }
   })
-  console.log('Email updated');
-  res.json('Email updated')
+  console.log('User info updated');
+  res.json('User info updated')
 })
 // Add more routes and handlers as needed...
 
 // Export the router
 module.exports = router;
 
-// router.put('/:id', async (req, res) => {
-//     // update a cateogry // successful
-//     const updatedCatData = await Category.update({
-//         category_name: req.body.category_name
-//     }, {
-//         where: {
-//             id: req.params.id
-//         }
-//     });
-//     console.log(`updated: ` + updatedCatData);
-//     res.json(`updated: ` + updatedCatData);
-// })
-
-// module.exports = router;

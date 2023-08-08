@@ -18,6 +18,7 @@ app.get('/', (req, res) => {
     res.render('all')
 })
 
+app.use(express.json());
 app.use(express.urlencoded({ extended: true}))
 
 app.use(session({

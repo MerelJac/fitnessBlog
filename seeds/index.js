@@ -8,11 +8,11 @@ const userData = [
 ];
 
 const blogPostData = [
-    { title: 'Gym Rat', text: 'We love to run on the wheel', user_created: '1'}
+    { title: 'Gym Rat', text: 'We love to run on the wheel', user_created: '2'}
 ];
 
 const commentData = [
-    { user_id: '1', post_id: '1', text: 'Testing comment'}
+    { user_id: '2', post_id: '1', text: 'Testing comment'}
 ]
 
   async function seedDatabase() {
