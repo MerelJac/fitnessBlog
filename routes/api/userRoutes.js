@@ -17,7 +17,7 @@ router.get('/:id', async (req, res) => {
   res.json(singleUser)
 })
 
-// create new user -- not yet working
+// create new user -- SUCCESSFUL
 router.post('/', async (req, res) => {
   console.log(req.body)
   const newUser = await User.create({
@@ -27,7 +27,7 @@ router.post('/', async (req, res) => {
     password: req.body.password
   })
   console.log('Created new user');
-  res.status(200).json('user created', newUser)
+  res.status(200).json(newUser)
   res.status(400).json(error)
 });
 
@@ -43,7 +43,7 @@ router.delete('/:id', async (req, res) => {
 })
 
 
-// update User info
+// update User info - SUCCESSFUL
 router.put('/:id', async (req, res) => {
   await User.update({
     email: req.body.email,
@@ -54,9 +54,9 @@ router.put('/:id', async (req, res) => {
     }
   })
   console.log('User info updated');
+
   res.json('User info updated')
 })
-// Add more routes and handlers as needed...
 
 // Export the router
 module.exports = router;
