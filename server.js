@@ -13,11 +13,6 @@ const PORT = process.env.PORT || 3002;
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars')
 
-// app.use(express.static('public'));
-app.get('/', (req, res) => {
-    res.render('all')
-})
-
 
 app.use(session({
     secret: 'secret secret',
@@ -30,6 +25,7 @@ app.use(session({
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}))
+app.use(express.static('public'));
 // should be set up after session 
 app.use(routes);
 
