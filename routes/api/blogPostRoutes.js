@@ -14,13 +14,11 @@ router.get('/:id', async (req, res) => {
   res.json(singleBlogPost)
 })
 
-// create new post -- not yet working
+// create new post -- SUCCESSFUL
 router.post('/', async (req, res) => {
-  console.log(req.body)
   const newBlogPost = await BlogPost.create(req.body)
   console.log('Created new BlogPost');
-  res.status(200).json('BlogPost created', newBlogPost)
-  res.status(400).json(error)
+  res.status(200).json('BlogPost created')
 });
 
 // delete BlogPost SUCCESSFUL
@@ -34,7 +32,7 @@ router.delete('/:id', async (req, res) => {
   res.json(`BlogPost Deleted`)
 })
 
-// successful
+// update post =  successful
 router.put('/:id', async (req, res) => {
   const updatePost = await BlogPost.update({
     title: req.body.title,
