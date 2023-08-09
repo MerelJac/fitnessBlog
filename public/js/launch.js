@@ -1,4 +1,5 @@
 const deleteBtns = document.querySelectorAll('.delete-btn');
+const title = document.querySelectorAll('.title')
 
 // successful
 deleteBtns.forEach((deleteBtn) => {
@@ -19,5 +20,13 @@ deleteBtns.forEach((deleteBtn) => {
         .catch ((err) => {
             console.error(err)})
     
+    })
+})
+
+
+title.forEach((title) => {
+    title.addEventListener('click', (event) => {
+        let postId = event.currentTarget.parentElement.parentElement.id;
+        
     })
 })

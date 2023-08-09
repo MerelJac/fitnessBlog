@@ -1,10 +1,10 @@
 <a href="/create"><h2>Create Post</h2></a>
 <section>
   {{#each allPosts}}
-    <article id="{{ this.id }}">
+    <article class="post-article" id="{{ this.id }}">
         <div id="title-header">
-            <h2 class="pink">{{this.title}}</h2>
-            <p class="delete-btn">delete</p>
+            <h2 class="pink title">{{this.title}}</h2>
+            <p class="delete-btn">X</p>
         </div>
             <p>{{this.text}}</p>
     </article>

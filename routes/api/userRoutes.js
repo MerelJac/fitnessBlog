@@ -28,7 +28,7 @@ router.post('/', async (req, res) => {
   })
   console.log('Created new user');
   res.status(200).json(newUser)
-  res.status(400).json(error)
+  res.status(400).json()
 });
 
 // delete user SUCCESSFUL

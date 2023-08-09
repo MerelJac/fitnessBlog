@@ -24,5 +24,16 @@ router.get('/create', (req, res) => {
   res.render('create')
 })
 
+router.get('/post/:id', async (req, res) => {
+  try {
+    const singleBlogPost = await BlogPost.findByPk(req.params.id);
+    const singlePostData = singleBlogPost.get({ plain: true});
+    console.log(singlePostData)
+    console.log('Found single BlogPost');
+    res.render('singlePost', singlePostData)
+  } catch (err) {
+    console.error(err)
+  }
+})
 
 module.exports = router;
