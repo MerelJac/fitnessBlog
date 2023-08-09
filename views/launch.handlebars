@@ -1,9 +1,14 @@
-<p>Hi</p>
+<a href="/create"><h2>Create Post</h2></a>
 <section>
   {{#each allPosts}}
-    <article>
-      <h2 class="pink">{{this.title}}</h2>
-      <p>{{this.text}}</p>
+    <article id="{{ this.id }}">
+        <div id="title-header">
+            <h2 class="pink">{{this.title}}</h2>
+            <p class="delete-btn">delete</p>
+        </div>
+            <p>{{this.text}}</p>
     </article>
   {{/each}}
 </section>
+
+<script src="/js/launch.js"></script>

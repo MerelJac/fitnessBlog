@@ -1,5 +1,7 @@
-body {
-    background-color: blue;
+#title-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .pink {

@@ -1,23 +1,6 @@
 const { BlogPost } = require('../../models');
 const router = require('express').Router();
 
-// // get all posts for homepage
-// router.get('/', async (req, res) => {
-//   try {
-//     const allBlogPosts = await BlogPost.findAll();
-//     const allPosts = allBlogPosts.map((post) => 
-//     { return post.get({ plain: true}) });
-//     console.log(allPosts)
-//     res.render('launch', {
-//       allPosts,
-//       // loggedIn: req.sesion.loggedIn
-//     });
-  
-//     } catch (err) {
-//       console.log(err);
-//       res.status(500).json({message: err})
-//     }
-// })
 
 // // get all blog posts
 router.get('/', async (req, res) => {
