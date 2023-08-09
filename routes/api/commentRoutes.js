@@ -32,37 +32,24 @@ router.get('/blogPost/:id', async (req, res) => {
     console.log('Found all comments for single post');
     res.json(commentsFromPost)
   })
-// // create new post -- not yet working
-// router.post('/', async (req, res) => {
-//   console.log(req.body)
-//   const newBlogPost = await BlogPost.create(req.body)
-//   console.log('Created new BlogPost');
-//   res.status(200).json('BlogPost created', newBlogPost)
-//   res.status(400).json(error)
-// });
 
-// router.delete('/:id', async (req, res) => {
-//   await BlogPost.destroy({
-//     where: {
-//       id: req.params.id
-//     }
-//   })
-//   console.log('BlogPost deleted');
-//   res.json(`BlogPost Deleted`)
-// })
+// create new comment -- SUCCESSFUL
+router.post('/', async (req, res) => {
+  console.log(req.body)
+  // user ID and post ID passed in from post 
+  const newBlogPost = await Comments.create(req.body)
+  console.log('Created new BlogPost');
+  res.status(200).json(newBlogPost)
+});
 
+// delete comment -- Successful 
+router.delete('/:id', async (req, res) => {
+    const deleteComment = await Comments.destroy({where: {
+        id: req.params.id
+    }})
+    console.log("Comment Deleted");
+    res.json('Comment deleted')
+})
 
-// router.put('/:id', async (req, res) => {
-//   const updatePost = await BlogPost.update({
-//     title: req.body.title,
-//     text: req.body.text
-//   }, {
-//     where: {
-//       id: req.params.id
-//     }
-//   })
-//   console.log('updated');
-//   res.json(updatePost)
-// })
 
 module.exports = router;
