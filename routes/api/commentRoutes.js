@@ -37,9 +37,9 @@ router.get('/blogPost/:id', async (req, res) => {
 router.post('/', async (req, res) => {
   console.log(req.body)
   // user ID and post ID passed in from post 
-  const newBlogPost = await Comments.create(req.body)
-  console.log('Created new BlogPost');
-  res.status(200).json(newBlogPost)
+  const newComment = await Comments.create(req.body)
+  console.log('Created new Comment');
+  res.status(200).json(newComment)
 });
 
 // delete comment -- Successful 

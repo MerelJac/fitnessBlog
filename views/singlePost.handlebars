@@ -1,10 +1,10 @@
 <section>
-    <article class="post-article" id="{{ id }}">
+    <article class="post-article" id="{{ post.id }}">
         <div id="title-header">
-            <h2 class="pink title">{{title}}</h2>
+            <h2 class="pink title">{{post.title}}</h2>
             <p class="delete-btn">X</p>
         </div>
-            <p>{{text}}</p>
+            <p>{{post.text}}</p>
     </article>
     <article>
         <h2>Share your thoughts</h2>
@@ -13,6 +13,13 @@
             <input type="submit">
         </form>
     </article>
+
+    <section>
+        {{#each comments}}
+            <div class="comment">{{ this.text }}</div>
+        {{/each}}
+    </section>
+
 </section>
 
 <a href="/"><h2>Home</h2></a>
