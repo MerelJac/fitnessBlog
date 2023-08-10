@@ -6,15 +6,13 @@ router.get('/:id', async (req, res) => {
     const singlePost = await BlogPost.findByPk(req.params.id);
     const post = await singlePost.get({ plain: true});
     console.log(post)
-    res.render('singlePost', {
-      post
-      // loggedIn: req.sesion.loggedIn
-    });
+    res.render('singlePost', post);
   
     } catch (err) {
       console.log(err);
       res.status(500).json(err)
     }
 })
+
 module.exports = router;
 

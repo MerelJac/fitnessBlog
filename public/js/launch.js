@@ -31,7 +31,7 @@ title.forEach((title) => {
         console.log(postId)
         fetch(`/blogPost/${postId}`)
         .then((response) => response.json())
-        // .then((data) => console.log(data))
+        .then(window.location.href = `/blogPost/${postId}`)
         .catch((err) => console.error(err))
     })
 })
