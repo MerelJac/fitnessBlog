@@ -3,7 +3,13 @@
 const deleteBtn = document.querySelector('.delete-btn');
 const submitComment = document.querySelector('input[type="submit"]')
 
-// let postId = passed from query 
+
+
+// get postId
+let url = window.location.href;
+let urlSplit = url.split('/');
+let postIdUrl = urlSplit[4];
+
 
 // successful
 deleteBtn.addEventListener('click', (event) => {
@@ -33,7 +39,7 @@ submitComment.addEventListener('click', (event) => {
     let commentData = {
         // update user/post based on info passed
         user_id: 15,
-        post_id: 10,
+        post_id: postIdUrl,
         text: commentText
     }
 

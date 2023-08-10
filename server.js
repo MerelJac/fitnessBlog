@@ -14,14 +14,15 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars')
 
 
-app.use(session({
+const sess = {
     secret: 'secret secret',
     cookie: { maxAge: 30000},
     resave: true,
     // otherwise will create new session upon every server launch
     saveUninitialized: false
+};
 
-}));
+app.use(session(sess));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}))

@@ -33,7 +33,7 @@ router.get('/blogPost/:id', async (req, res) => {
     res.json(commentsFromPost)
   })
 
-// create new comment -- SUCCESSFUL
+// create new comment 
 router.post('/', async (req, res) => {
   console.log(req.body)
   // user ID and post ID passed in from post 
@@ -44,7 +44,7 @@ router.post('/', async (req, res) => {
 
 // delete comment -- Successful 
 router.delete('/:id', async (req, res) => {
-    const deleteComment = await Comments.destroy({where: {
+    await Comments.destroy({where: {
         id: req.params.id
     }})
     console.log("Comment Deleted");
