@@ -1,7 +1,7 @@
 const deleteBtns = document.querySelectorAll('.delete-btn');
 const title = document.querySelectorAll('.title')
 
-// successful
+// delete a post successful
 deleteBtns.forEach((deleteBtn) => {
     deleteBtn.addEventListener('click', (event) => {
 
@@ -27,6 +27,9 @@ deleteBtns.forEach((deleteBtn) => {
 title.forEach((title) => {
     title.addEventListener('click', (event) => {
         let postId = event.currentTarget.parentElement.parentElement.id;
-        
+        fetch(`/blogPost/${postId}`)
+        .then((response) => response.json())
+        .then((data) => console.log(data))
+        .catch((err) => console.error(err))
     })
 })
