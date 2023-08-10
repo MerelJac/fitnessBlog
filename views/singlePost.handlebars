@@ -6,9 +6,11 @@
         </div>
             <p>{{post.text}}</p>
     </article>
+    {{#if loggedIn}}
     <article>
         <h2>Share your thoughts</h2>
         <form>
+    
             <input id="commentText" placeholder="Add comment">
             <input type="submit">
         </form>
@@ -19,7 +21,12 @@
             <div class="comment">{{ this.text }}</div>
         {{/each}}
     </section>
-
+    {{ else }}
+    <article>
+        <h2>Share your thoughts</h2>
+        <p>Log in to add a comment</p>
+    </article>  
+    {{/if }}
 </section>
 
 <a href="/"><h2>Home</h2></a>

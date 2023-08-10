@@ -1,5 +1,3 @@
-console.log('found it')
-
 const logInBtn = document.querySelector('#submitLogIn')
 
 logInBtn.addEventListener('click', async (event) => {
@@ -8,7 +6,6 @@ logInBtn.addEventListener('click', async (event) => {
     const email = document.querySelector('#email').value;
     const password = document.querySelector('#password').value;
 
-    console.log(email, password)
 
     if (email && password) {
         const response = await fetch('/api/users/login', {

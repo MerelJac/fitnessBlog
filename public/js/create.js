@@ -6,12 +6,13 @@ submitBtn.addEventListener('click', (event) => {
     let title = document.querySelector('#titleText').value;
     let text = document.querySelector('#textText').value;
     // session cookies is user ID FIX
-    let userId = 2;
+    // let userId = sessionStorage.getItem('userId');
+    // console.log(userId)
 
     let postBody = {
         title: title,
 		text: text,
-		user_created: userId
+		user_created: 5
     }
 
     fetch('/api/blogPost', {

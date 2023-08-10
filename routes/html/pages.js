@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
       { return post.get({ plain: true}) });
       res.render('launch', {
         allPosts,
-        // loggedIn: req.sesion.loggedIn
+        loggedIn: req.session.loggedIn
       });
     
       } catch (err) {

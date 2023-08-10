@@ -2,7 +2,7 @@
 const router = require('express').Router();
 const { User } = require('../../models')
 
-
+// log in
 router.post('/login', async (req, res) => {
     try {
       const dbUserData = await User.findOne({
@@ -24,9 +24,12 @@ router.post('/login', async (req, res) => {
           .json({ message: 'Incorrect email or password. Please try again!' });
         return;
       }
+
+      console.log(dbUserData.id)
   
       req.session.save(() => {
         req.session.loggedIn = true;
+        req.session.userId = dbUserData.id;
         console.log(
           'File: user-routes.js ~ line 57 ~ req.session.save ~ req.session.cookie',
           req.session.cookie
@@ -39,6 +42,18 @@ router.post('/login', async (req, res) => {
       res.status(500).json(err);
     }
 })
+
+
+// Logout
+router.post('/logout', (req, res) => {
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  }
+});
 
 // Define routes and handlers for '/users' SUCCESSFUL
 router.get('/', async (req, res) => {
