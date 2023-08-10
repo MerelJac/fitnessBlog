@@ -2,6 +2,44 @@
 const router = require('express').Router();
 const { User } = require('../../models')
 
+
+router.post('/login', async (req, res) => {
+    try {
+      const dbUserData = await User.findOne({
+        where: {
+          email: req.body.email,
+        },
+      });
+  
+      if (!dbUserData) {
+        res
+          .status(400)
+          .json({ message: 'Incorrect email or password. Please try again!' });
+        return;
+      }
+  
+      if (!dbUserData.password == req.body.password) {
+        res
+          .status(400)
+          .json({ message: 'Incorrect email or password. Please try again!' });
+        return;
+      }
+  
+      req.session.save(() => {
+        req.session.loggedIn = true;
+        console.log(
+          'File: user-routes.js ~ line 57 ~ req.session.save ~ req.session.cookie',
+          req.session.cookie
+        );
+  
+        res.status(200).json({ user: dbUserData, message: 'You are now logged in!' });
+      });
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+})
+
 // Define routes and handlers for '/users' SUCCESSFUL
 router.get('/', async (req, res) => {
   // Implementation for handling GET request to /api/users
