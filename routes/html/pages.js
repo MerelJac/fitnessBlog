@@ -36,4 +36,9 @@ router.get('/post/:id', async (req, res) => {
   }
 })
 
+//login page 
+router.get('/login', (req, res) => {
+  res.render('login')
+})
+
 module.exports = router;

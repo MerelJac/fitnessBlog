@@ -7,6 +7,13 @@
     <title>Main Blog</title>
 </head>
 <body>
+    <header>
+    {{#if loggedIn}}
+        <button id="logout" class="btn-no-style">Logout</button>
+        {{else}}
+        <a href="/login">Login</a>
+        {{/if}}
+    </header>
     {{{ body }}}
 </body>
 </html>
