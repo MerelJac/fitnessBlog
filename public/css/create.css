@@ -12,3 +12,17 @@ header {
     display: flex;
     justify-content: center;
 }
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+#titleText {
+    height: 50px;
+}
+
+#textText {
+    height: 150px;
+    margin-bottom: 20px;
+}
