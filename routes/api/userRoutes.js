@@ -67,6 +67,7 @@ router.get('/', async (req, res) => {
 
 // get one user SUCCESSFUL
 router.get('/:id', async (req, res) => {
+
   const singleUser = await User.findByPk(req.params.id);
   console.log('Found single User');
   res.json(singleUser)
@@ -74,15 +75,23 @@ router.get('/:id', async (req, res) => {
 
 // create new user -- SUCCESSFUL
 router.post('/', async (req, res) => {
-  console.log(req.body)
-  const newUser = await User.create({
+
+  let newUser = await User.create({
     first_name: req.body.first_name,
     last_name: req.body.last_name,
     email: req.body.email,
     password: req.body.password
   })
 
-  console.log(newUser.get({ plain: true }))
+  newUser = await User.findOne({
+    where: {
+      id: newUser.id
+    }, 
+      attributes: {
+      exclude: ["password"]
+    }
+  })
+
 
   req.session.save(() => {
     req.session.loggedIn = true;
@@ -91,6 +100,7 @@ router.post('/', async (req, res) => {
       'File: user-routes.js ~ line 57 ~ req.session.save ~ req.session.cookie',
       req.session.cookie
     );
+
 
     res.status(200).json({ user: newUser, message: 'You are now logged in!' });
   });
