@@ -13,3 +13,9 @@
     border: pink 2px solid;
     border-radius: 5px;
 }
+
+header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}

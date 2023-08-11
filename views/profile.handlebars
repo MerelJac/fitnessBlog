@@ -1,8 +1,11 @@
 <link rel="stylesheet" href="/css/profile.css">
 {{#if loggedIn}}
 <header class="showHeader">
+<h2>Fitness Blog</h2>
+    <div class="row">
     <a href="/create">Create Post</a>
     <a id="logout" href="/">Log Out</a>
+    </div>
 </header>
 
 <p>Hello {{ user.first_name }}</p>

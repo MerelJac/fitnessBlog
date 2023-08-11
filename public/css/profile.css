@@ -4,4 +4,6 @@ header {
 
 .showHeader {
     display: flex !important;
+    align-items: center;
+    flex-direction: column;
 }

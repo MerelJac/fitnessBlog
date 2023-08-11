@@ -1,5 +1,5 @@
+<link rel="stylesheet" href="/css/singlePost.css">
 <section>
-    <p> {{ user.first_name }} </p>
     <article class="post-article" id="{{ post.id }}">
         <div id="title-header">
             <h2 class="pink title">{{post.title}}</h2>
@@ -24,12 +24,14 @@
 
     <section>
         {{#each comments}}
-            <div class="comment">{{ this.text }}</div>
+        <div class="container">
+            <p class="comment">{{ this.text }}</p>
+        </div>
         {{/each}}
     </section>
 
 </section>
 
-<a href="/"><h2>Home</h2></a>
+<a class="center" href="/"><p>Home<p2></a>
 
 <script src="/js/singlePost.js"></script>
