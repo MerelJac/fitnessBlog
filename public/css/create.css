@@ -1,0 +1,14 @@
+header {
+    display: none;
+}
+
+.showHeader {
+    display: flex !important;
+    align-items: center;
+    flex-direction: column;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
