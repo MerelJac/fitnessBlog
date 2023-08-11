@@ -24,6 +24,7 @@ router.get('/create', (req, res) => {
   res.render('create')
 })
 
+//get single post 
 router.get('/post/:id', async (req, res) => {
   try {
     const singleBlogPost = await BlogPost.findByPk(req.params.id);
