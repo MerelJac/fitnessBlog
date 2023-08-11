@@ -9,6 +9,9 @@ router.post('/login', async (req, res) => {
         where: {
           email: req.body.email,
         },
+        attributes: {
+          exclude: ["password"]
+        }
       });
   
       if (!dbUserData) {

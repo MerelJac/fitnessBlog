@@ -12,7 +12,6 @@ submitBtn.addEventListener('click', (event) => {
     let postBody = {
         title: title,
 		text: text,
-		user_created: 5
     }
 
     fetch('/api/blogPost', {

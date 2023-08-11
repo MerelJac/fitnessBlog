@@ -20,7 +20,11 @@ router.get('/:id', async (req, res) => {
 
 // create new post -- SUCCESSFUL
 router.post('/', async (req, res) => {
-  await BlogPost.create(req.body)
+  console.log(req.session)
+  let id = req.session.user.id;
+  let newPost = {...req.body, user_created: id}
+  console.log(newPost)
+  await BlogPost.create(newPost)
   console.log('Created new BlogPost');
   res.status(200).json('BlogPost created')
 });
