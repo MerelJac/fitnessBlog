@@ -41,10 +41,10 @@ router.get('/login', (req, res) => {
   res.render('login')
 })
 
-// find your data
+// find your user
 router.get('/profile', async (req, res) => {
   try {
-    console.log('hi')
+    res.render('profile', { user: req.session.user })
     // const yourPosts = await BlogPost.findByPk
   }
   catch (err) {
