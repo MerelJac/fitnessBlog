@@ -1,4 +1,5 @@
 <section>
+    <p> {{ user.first_name }} </p>
     <article class="post-article" id="{{ post.id }}">
         <div id="title-header">
             <h2 class="pink title">{{post.title}}</h2>
@@ -15,18 +16,19 @@
             <input type="submit">
         </form>
     </article>
+        {{ else }}
+    <article>
+        <h2>Share your thoughts</h2>
+        <p>Log in to add a comment</p>
+    </article>  
+    {{/if }}
 
     <section>
         {{#each comments}}
             <div class="comment">{{ this.text }}</div>
         {{/each}}
     </section>
-    {{ else }}
-    <article>
-        <h2>Share your thoughts</h2>
-        <p>Log in to add a comment</p>
-    </article>  
-    {{/if }}
+
 </section>
 
 <a href="/"><h2>Home</h2></a>

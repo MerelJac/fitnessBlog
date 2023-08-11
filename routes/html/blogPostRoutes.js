@@ -20,7 +20,7 @@ router.get('/:id', async (req, res) => {
     console.log(comments)
     console.log(post)
 
-    res.render('singlePost', {post, comments, loggedIn: req.session.loggedIn} );
+    res.render('singlePost', {post, comments, loggedIn: req.session.loggedIn, user: req.session.user} );
 
     // sessions = successful
     req.session.postId = req.params.id;

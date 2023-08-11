@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { BlogPost } = require('../../models')
+const { BlogPost, User } = require('../../models')
 
 
 // get all posts for homepage
@@ -30,7 +30,7 @@ router.get('/post/:id', async (req, res) => {
     const singlePostData = singleBlogPost.get({ plain: true});
     console.log(singlePostData)
     console.log('Found single BlogPost');
-    res.render('singlePost', singlePostData)
+    res.render('singlePost', {singlePostData, user: req.session.user})
   } catch (err) {
     console.error(err)
   }
@@ -39,6 +39,17 @@ router.get('/post/:id', async (req, res) => {
 //login page 
 router.get('/login', (req, res) => {
   res.render('login')
+})
+
+// find your data
+router.get('/profile', async (req, res) => {
+  try {
+    console.log('hi')
+    // const yourPosts = await BlogPost.findByPk
+  }
+  catch (err) {
+    console.error(err)
+  }
 })
 
 module.exports = router;

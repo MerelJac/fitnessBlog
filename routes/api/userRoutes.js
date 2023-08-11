@@ -29,7 +29,7 @@ router.post('/login', async (req, res) => {
   
       req.session.save(() => {
         req.session.loggedIn = true;
-        req.session.userId = dbUserData.id;
+        req.session.user = dbUserData;
         console.log(
           'File: user-routes.js ~ line 57 ~ req.session.save ~ req.session.cookie',
           req.session.cookie
@@ -42,7 +42,6 @@ router.post('/login', async (req, res) => {
       res.status(500).json(err);
     }
 })
-
 
 // Logout
 router.post('/logout', (req, res) => {
@@ -94,7 +93,6 @@ router.delete('/:id', async (req, res) => {
   console.log('User deleted');
   res.json(`User Deleted`)
 })
-
 
 // update User info - SUCCESSFUL
 router.put('/:id', async (req, res) => {

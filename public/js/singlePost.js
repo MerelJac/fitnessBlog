@@ -28,7 +28,6 @@ deleteBtn.addEventListener('click', (event) => {
     })
     .catch ((err) => {
         console.error(err)})
-
 })
 
 submitComment.addEventListener('click', (event) => {
