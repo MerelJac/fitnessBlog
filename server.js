@@ -16,7 +16,7 @@ app.set('view engine', 'handlebars')
 
 const sess = {
     secret: 'secret secret',
-    cookie: { maxAge: 30000},
+    cookie: { maxAge: 3600000},
     resave: true,
     // otherwise will create new session upon every server launch
     saveUninitialized: false

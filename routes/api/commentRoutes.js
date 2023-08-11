@@ -36,8 +36,10 @@ router.get('/blogPost/:id', async (req, res) => {
 // create new comment 
 router.post('/', async (req, res) => {
   console.log(req.body)
+  let id = req.session.user.id;
+  let newComment = {...req.body, user_id: id}
   // user ID and post ID passed in from post 
-  const newComment = await Comments.create(req.body)
+  await Comments.create(newComment)
   console.log('Created new Comment');
   res.status(200).json(newComment)
 });
