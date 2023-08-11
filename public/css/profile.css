@@ -1,3 +1,7 @@
 header {
     display: none;
 }
+
+.showHeader {
+    display: flex !important;
+}

@@ -44,7 +44,7 @@ router.get('/login', (req, res) => {
 // find your user
 router.get('/profile', async (req, res) => {
   try {
-    res.render('profile', { user: req.session.user })
+    res.render('profile', { user: req.session.user, loggedIn: req.session.loggedIn })
     // const yourPosts = await BlogPost.findByPk
   }
   catch (err) {
