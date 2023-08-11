@@ -5,13 +5,12 @@
     justify-content: space-between;
 }
 
-.pink {
-    color: pink
-}
 
 .post-article {
-    border: pink 2px solid;
+    border: black 2px solid;
     border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
 }
 
 header {
