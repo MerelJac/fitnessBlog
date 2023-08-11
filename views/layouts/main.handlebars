@@ -9,11 +9,12 @@
 <body>
     <header>
     {{#if loggedIn}}
-        <button id="logout" class="btn-no-style" id="logout">Logout</button>
+    <a href="/create">Create Post</a>
+    <a href="/account">My Account</a>
         {{else}}
+        <a href="/login">Create Post</a>
         <a href="/login">Login</a>
         {{/if}}
-    <a href="/profile">Your Profile</a>
     </header>
     {{{ body }}}
 </body>
