@@ -81,9 +81,20 @@ router.post('/', async (req, res) => {
     email: req.body.email,
     password: req.body.password
   })
-  console.log('Created new user');
-  res.status(200).json(newUser)
-  res.status(400).json()
+
+  console.log(newUser.get({ plain: true }))
+
+  req.session.save(() => {
+    req.session.loggedIn = true;
+    req.session.user = newUser;
+    console.log(
+      'File: user-routes.js ~ line 57 ~ req.session.save ~ req.session.cookie',
+      req.session.cookie
+    );
+
+    res.status(200).json({ user: newUser, message: 'You are now logged in!' });
+  });
+
 });
 
 // delete user SUCCESSFUL

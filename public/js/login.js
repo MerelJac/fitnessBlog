@@ -48,9 +48,11 @@ signUpBtn.addEventListener('click', async (event) => {
     });
 
     if (response.ok) {
+      await fetch('/')
       document.location.replace('/');
     } else {
       alert('Failed to log in.');
     }
+
   }
 })
