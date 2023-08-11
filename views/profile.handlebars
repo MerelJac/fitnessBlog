@@ -6,6 +6,37 @@
 </header>
 
 <p>Hello {{ user.first_name }}</p>
+{{#if posts }}
+<h2>Your Posts</h2>
+<section>
+  {{#each posts}}
+    <article class="post-article" id="{{ this.id }}">
+        <div id="title-header">
+            <h2 class="pink title">{{this.title}}</h2>
+            <p class="delete-btn">X</p>
+        </div>
+            <p>{{this.text}}</p>
+    </article>
+  {{/each}}
+</section>
+{{else}}
+<a href="/create">Create a Post</a>
+{{/if}}
+
+{{#if comments}}
+<h2>Your Comments</h2>
+<section>
+  {{#each comments}}
+    <article class="post-article" id="{{ this.id }}">
+        <div id="title-header">
+            <h2 class="pink title">{{this.title}}</h2>
+            <p class="delete-btn">X</p>
+        </div>
+            <p>{{this.text}}</p>
+    </article>
+  {{/each}}
+</section>
+{{/if}}
 
 
 
@@ -14,4 +45,6 @@
 
 <p>Please <a href="/login">log in</a> or <a href="/login">create an account</a></p>
 {{/if}}
-<script src="/js/logout"></script>
+
+<script src="/js/logout.js"></script>
+<script src="/js/profile.js"></script>

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { BlogPost, User } = require('../../models')
+const { BlogPost, User, Comments } = require('../../models')
 
 
 // get all posts for homepage
@@ -44,13 +44,42 @@ router.get('/login', (req, res) => {
 
 // find your user
 router.get('/profile', async (req, res) => {
+if (req.session.user) {
   try {
-    res.render('profile', { user: req.session.user, loggedIn: req.session.loggedIn })
+
+    const myPosts = await BlogPost.findAll({
+      where: {
+        user_created: req.session.user.id
+        }
+      })
+
+      let posts = await myPosts.map((posts) => {
+        return posts.get({ plain: true})
+      })
+
+    const myComments = await Comments.findAll({
+      where: {
+        user_id: req.session.user.id
+      }, include: BlogPost
+    })
+
+    let comments = await myComments.map((comment) => {
+      return comment.get({ plain: true })
+    })
+
+    console.log(comments)
+
+    res.render('profile', { posts, comments, user: req.session.user, loggedIn: req.session.loggedIn })
     // const yourPosts = await BlogPost.findByPk
   }
   catch (err) {
-    console.error(err)
+    console.error(`An error occured ${err}`)
   }
-})
+} else {
+  res.render('/')
+}
+
+} 
+)
 
 module.exports = router;
