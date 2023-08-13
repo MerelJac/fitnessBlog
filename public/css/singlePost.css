@@ -8,3 +8,8 @@
     border: 2px black solid;
     border-radius: 5px;
 }
+
+.row {
+    display: flex;
+    flex-direction: row;
+}

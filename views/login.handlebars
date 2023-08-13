@@ -1,38 +1,38 @@
 <link rel="stylesheet" href="/css/login.css">
-    <h1>Login</h1>
+    <h1 class="text-4xl font-extrabold">Login</h1>
     <form id="loginForm">
-        <div class="stacked space-below">
+        <div class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline stacked space-below">
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
         </div>
-        <div class="stacked space-below">
+        <div class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline stacked space-below">
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required>
         </div>
-        <button class="right-align" id="submitLogIn" type="submit">Login</button>
+        <button class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800 right-align" id="submitLogIn" type="submit">Login</button>
     </form>
 
-        <h1>Sign Up</h1>
+        <h1 class="text-4xl font-extrabold">Sign Up</h1>
     <form id="signupForm">
         <div class="row">
-            <div class="stacked space-below">
+            <div class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline stacked space-below">
                 <label for="firstName">First Name:</label>
                 <input type="firstName" id="firstName" name="firstName" required>
             </div>  
-            <div class="stacked space-below">
+            <div class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline stacked space-below">
                 <label for="lastName">Last Name:</label>
                 <input type="lastName" id="lastName" name="lastName" required>
             </div>
         </div>
-        <div class="stacked space-below">
+        <div class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline stacked space-below">
         <label for="emailSignUp">Email:</label>
         <input type="email" id="emailSignUp" name="emailSignUp" required>
         </div>
-        <div class="stacked space-below">
+        <div class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline stacked space-below">
         <label for="passwordSignUp">Password:</label>
         <input type="password" id="passwordSignUp" name="passwordSignUp" required>
         </div> 
-        <button id="submitSignUp" class="right-align" type="submit">Sign In</button>
+        <button id="submitSignUp" class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800 right-align" type="submit">Sign In</button>
     </form>
 
 <script src="/js/login.js"></script>

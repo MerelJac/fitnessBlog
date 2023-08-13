@@ -1,16 +1,16 @@
 <link rel="stylesheet" href="/css/profile.css">
 {{#if loggedIn}}
 <header class="showHeader">
-<h2>Fitness Blog</h2>
+    <a class="bottom-0 center" href="/"><h2 class="text-4xl font-extrabold dark:text-white">Fitness Blog</h2></a>
     <div class="row">
     <a href="/create">Create Post</a>
     <a id="logout" href="/">Log Out</a>
     </div>
 </header>
 
-<p>Hello {{ user.first_name }}</p>
+<h4 class="text-4xl font-bold dark:text-white">Hello, {{ user.first_name }}!</h4>
 {{#if posts }}
-<h2>Your Posts</h2>
+<h2 class="text-2xl">Your Posts</h2>
 <section>
   {{#each posts}}
     <article class="post-article" id="{{ this.id }}">
@@ -27,7 +27,7 @@
 {{/if}}
 
 {{#if comments}}
-<h2>Your Comments</h2>
+<h2 class="text-2xl">Your Comments</h2>
 <section>
   {{#each comments}}
     <article class="post-article" id="{{ this.id }}">

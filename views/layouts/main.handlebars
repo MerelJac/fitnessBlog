@@ -10,13 +10,13 @@
 <body>
     <header>
     {{#if loggedIn}}
-    <h2 class="text-4xl font-extrabold dark:text-white">Fitness Blog</h2>
+    <a class="bottom-0 center" href="/"><h2 class="text-4xl font-extrabold dark:text-white">Fitness Blog</h2></a>
     <div class="row">
         <a href="/create">Create Post</a>
         <a href="/profile">My Account</a>
     </div>
         {{else}}
-        <h2 class="text-4xl font-extrabold dark:text-white">Fitness Blog</h2>
+    <a class="bottom-0 center" href="/"><h2 class="text-4xl font-extrabold dark:text-white">Fitness Blog</h2></a>
         <div class="row">
             <a href="/login">Create Post</a>
             <a href="/login">Login</a>
