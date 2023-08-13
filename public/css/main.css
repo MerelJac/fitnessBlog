@@ -1,3 +1,6 @@
+* {
+    margin: 10px;
+}
 #title-header {
     display: flex;
     flex-direction: row;
