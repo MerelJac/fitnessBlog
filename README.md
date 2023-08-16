@@ -18,6 +18,21 @@ A fitness blog website where users can share their fitness experiences, tips, an
 
 Fitness Blog is a web application that allows users to create, view, and interact with fitness-related blog posts. Users can sign up, log in, create posts, leave comments, and engage in discussions around various fitness topics.
 
+Home Page: 
+
+[Video Walkthrough](https://drive.google.com/file/d/1W8NBCEYT5lCEG9Xudhbbkapa16KFOk6V/view)
+
+![alt text](./public/resources/main.png)
+
+Your account:
+
+![alt text](./public/resources/accout.png)
+
+
+Create post:
+
+![alt text](./public/resources/create.png)
+
 ## Features
 
 - User authentication and registration

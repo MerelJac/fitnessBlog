@@ -8,9 +8,9 @@
     </div>
 </header>
 
-<h4 class="text-4xl font-bold dark:text-white">Hello, {{ user.first_name }}!</h4>
+<h4 class="text-4xl font-bold dark:text-white padding-bottom">Hello, {{ user.first_name }}!</h4>
 {{#if posts }}
-<h2 class="text-2xl font-bold">Your Posts</h2>
+<h2 class="text-2xl font-bold ">Your Posts</h2>
 <section>
   {{#each posts}}
     <article class="post-article" id="{{ this.id }}">
@@ -27,7 +27,7 @@
 {{/if}}
 
 {{#if comments}}
-<h2 class="text-2xl">Your Comments</h2>
+<h2 class="text-2xl font-bold">Your Comments</h2>
 <section>
   {{#each comments}}
     <article class="post-article" id="{{ this.id }}">
