@@ -10,12 +10,12 @@
 
 <h4 class="text-4xl font-bold dark:text-white">Hello, {{ user.first_name }}!</h4>
 {{#if posts }}
-<h2 class="text-2xl">Your Posts</h2>
+<h2 class="text-2xl font-bold">Your Posts</h2>
 <section>
   {{#each posts}}
     <article class="post-article" id="{{ this.id }}">
         <div id="title-header">
-            <h2 class="pink title text-xl">{{this.title}}</h2>
+            <h2 class="pink text-4xl font-bold">{{this.title}}</h2>
             <p class="delete-btn">X</p>
         </div>
             <p>{{this.text}}</p>

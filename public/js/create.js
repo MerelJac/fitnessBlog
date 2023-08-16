@@ -23,6 +23,6 @@ submitBtn.addEventListener('click', (event) => {
     })
     .then((response) => response.json())
     .then((data) => console.log(data))
-
+    .then(window.location.href = '/')
 
 })

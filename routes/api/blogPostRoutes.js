@@ -21,7 +21,8 @@ router.get('/:id', async (req, res) => {
 // create new post -- SUCCESSFUL
 router.post('/', async (req, res) => {
   console.log(req.session)
-  let id = req.session.user.id;
+  let id = Number(req.session.user.id);
+
   let newPost = {...req.body, user_created: id}
   console.log(newPost)
   await BlogPost.create(newPost)
