@@ -2,10 +2,11 @@
   "name": "fitnessblog",
   "version": "1.0.0",
   "description": "Blog allowing users to create posts and view posts of others.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
+    "seed": "node seeds/index.js",
     "build-css": "tailwindcss build src/styles.css -o public/css/styles.css"
   },
   "repository": {
